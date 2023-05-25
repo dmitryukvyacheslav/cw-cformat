@@ -1,0 +1,7 @@
+scratchpad.txt
+.vscode/c_cpp_properties.json
+.vscode/settings.json
+obj/cformat.o
+obj/main.o
+obj/stack/stack.o
+bin/cformat
