@@ -19,7 +19,6 @@ static int cf_get_indent_levels(struct stack* stk) {
     return indent_levels;
 }
 
-/* static int cf_stack_checkpop(struct stack* stk, char sym) {
     char testsym;
     if (sym == ')') testsym == '(';
     if (sym == ']') testsym == '[';
@@ -27,10 +26,6 @@ static int cf_get_indent_levels(struct stack* stk) {
     return stk->a[stack_size(stk)] == testsym;
 } */
 
-/** обработка команд препроцессора
- * всё кроме #define (1 или 2 аргумента) однозначно
- * решение: разделитель (\n или # (начало другой команды препроцессора))
-*/
 /** чтение файла
  * задача - только расставить табуляцию 
  * осуществляется посимвольно до встречи некоторого из разделителей (";{}")
@@ -117,7 +112,7 @@ static void print_split(char* str, int tabs){
     if ((strlen(closest) + (tabs+1)*4) > MAX_STR_LEN)
         print_split(closest, tabs+1);
     else
-    for (int i = 0; i < tabs+1; i++) printf("    ");
+    for (int i = 0; i < tabs+1; i++) printf("\t");
     printf("%s\n", closest);
 }
  
